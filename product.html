@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce Frontend</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <title>Product Details - E-Shop</title>
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
     <header>
@@ -23,19 +23,12 @@
         </div>
         <div class="hamburger">☰</div>
     </header>
-    
-    <section class="hero">
-        <h1>Biggest Sale of the Year!</h1>
-        <p class="subheading">Up to 50% off on all products. Shop now!</p>
-        <a href="#products" class="cta-button">Shop Now</a>
-    </section>
-    
-    <section id="products" class="product-section">
-        <div class="loading-spinner">Loading products...</div>
-        <div class="error-message" style="display: none;"></div>
-        <div class="grid-container" id="productGrid"></div>
+
+    <section class="product-detail">
+        <div class="detail-container" id="productDetail"></div>
     </section>
 
-    <script src="scripts/app.js"></script>
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/product.js"></script>
 </body>
 </html>
