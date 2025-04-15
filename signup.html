@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - E-Shop</title>
+    <link rel="stylesheet" href="./styles/main.min.css">
+</head>
+<body>
+    <header id="header">
+        <div class="logo" onclick="window.location.href='index.html'">E-Shop</div>
+        <nav class="nav-menu">
+            <ul id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li id="authLink"><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="cart">
+            <img src="./assets/shopping-cart.png" loading="lazy" alt="Cart" class="cart-icon" onclick="window.location.href='cart.html'">
+            <span class="notification-badge">0</span>
+        </div>
+        <div class="hamburger">☰</div>
+    </header>
+
+    <section class="auth-section">
+        <div class="auth-container">
+            <h1>Signup</h1>
+            <form id="signupForm" onsubmit="return validateSignup(event)">
+                <div class="form-group">
+                    <label for="signupFullName">Full Name:</label>
+                    <input type="text" id="signupFullName" name="signupFullName" required>
+                    <span class="error" id="signupFullNameError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email:</label>
+                    <input type="email" id="signupEmail" name="signupEmail" required>
+                    <span class="error" id="signupEmailError"></span>
+                </div>
+                <div class="form-group password-wrapper">
+                    <label for="signupPassword">Password:</label>
+                    <input type="password" id="signupPassword" name="signupPassword" required>
+                    <button type="button" class="toggle-password" onclick="togglePassword('signupPassword')">👁️</button>
+                    <span class="error" id="signupPasswordError"></span>
+                </div>
+                <div class="form-group password-wrapper">
+                    <label for="signupConfirmPassword">Confirm Password:</label>
+                    <input type="password" id="signupConfirmPassword" name="signupConfirmPassword" required>
+                    <button type="button" class="toggle-password" onclick="togglePassword('signupConfirmPassword')">👁️</button>
+                    <span class="error" id="signupConfirmPasswordError"></span>
+                </div>
+                <button type="submit" class="cta-button">Sign Up</button>
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </form>
+            <div id="authMessage"></div>
+            <button id="logoutBtn" class="cta-button" style="display: none;" onclick="logout()">Logout</button>
+        </div>
+    </section>
+
+    <script type="module" src="./scripts/auth.min.js"></script>
+    <script src="./scripts/app.min.js" defer></script>
+</body>
+</html>
